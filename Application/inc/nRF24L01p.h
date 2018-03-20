@@ -22,7 +22,7 @@ P.S. SPI -> SPI 1
 #define CE_Pin GPIO_Pin_3
 #define IRQ_Pin GPIO_Pin_12
 
-#define DEBUG_EN 1
+#define DEBUG_EN 0
 
 //extern volatile DMA_InitTypeDef  DMA_SPIStructure;
 //extern volatile SPI_InitTypeDef  SPI_InitStructure;

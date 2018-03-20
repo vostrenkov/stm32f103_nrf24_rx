@@ -52,11 +52,11 @@ void nRF24L01p_Config(void){
 	
 		/* EXT IRQ Interrupt */
 	
-		/* Connect EXTI0 Line to IRQ pin  pin */
+		/* Connect EXTI12 Line to IRQ pin  pin */
 		
   GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource12);
 	
-		/* Configure EXTI0 line */
+		/* Configure EXTI12 line */
   EXTI_InitStructure.EXTI_Line = EXTI_Line12;
   EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
   EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;  

@@ -35,6 +35,8 @@ int main(void)
 	
 	nRF24L01p_Config();
 	nRF24L01pConfRxMode();
+	
+	CE_SET;
 
 	for(;;)
 	{
@@ -46,7 +48,6 @@ static void NVIC_config(void)
 {
 	uint32_t nvic_status = 0;
 	
-	NVIC_DisableIRQ(EXTI2_IRQn);
 	NVIC_DisableIRQ(EXTI15_10_IRQn);
 	NVIC_DisableIRQ(DMA1_Channel4_IRQn);
 	
@@ -54,10 +55,8 @@ static void NVIC_config(void)
 	nvic_status = NVIC_GetPriorityGrouping();
 	
 	NVIC_SetPriority(DMA1_Channel4_IRQn, NVIC_EncodePriority(nvic_status,1,0));
-	NVIC_SetPriority(EXTI2_IRQn, NVIC_EncodePriority(nvic_status,2,0));
-	NVIC_SetPriority(EXTI15_10_IRQn, NVIC_EncodePriority(nvic_status,3,0));
+	NVIC_SetPriority(EXTI15_10_IRQn, NVIC_EncodePriority(nvic_status,2,0));
 	
-	NVIC_EnableIRQ(EXTI2_IRQn);
 	NVIC_EnableIRQ(EXTI15_10_IRQn);
 	NVIC_EnableIRQ(DMA1_Channel4_IRQn);
 }
